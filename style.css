@@ -26,3 +26,19 @@
   position:absolute;
   z-index: auto;
 }
+
+#bomb{
+  width:32px;
+  height:32px;
+  background-color:yellow;
+  position:absolute;
+  /* display: none; */
+}
+
+.not-visible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
