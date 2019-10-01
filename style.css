@@ -8,6 +8,14 @@
 #player{
   width:32px;
   height:32px;
-  background-color:grey;
+  background-color:green;
   position:absolute;
+}
+
+
+.badguy{
+  width:32px;
+  height:32px;
+  background-color:red;
+  position:relative;
 }
