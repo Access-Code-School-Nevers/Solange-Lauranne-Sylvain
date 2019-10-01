@@ -5,17 +5,24 @@
   position:relative;
 }
 
-#player{
-  width:32px;
-  height:32px;
-  background-color:green;
-  position:absolute;
-}
-
-
 .badguy{
   width:32px;
   height:32px;
   background-color:red;
   position:absolute;
+}
+
+.wall {
+  width:32px;
+  height:32px;
+  background-color:#483829;
+  position:absolute;
+}
+
+#player{
+  width:32px;
+  height:32px;
+  background-color:green;
+  position:absolute;
+  z-index: auto;
 }

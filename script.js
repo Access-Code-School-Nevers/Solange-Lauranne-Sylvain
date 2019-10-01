@@ -1,9 +1,11 @@
+
+
 var player = document.getElementById('player');
 var moveSize = 32;
 var parentRect = document.getElementById('board').getBoundingClientRect();
 var childRect;
 
-// Handle arrows to move the player
+// PLAYER MOVEMENT //
 document.addEventListener('keydown', function(event) {
 
   childRect = document.getElementById('player').getBoundingClientRect();
@@ -26,10 +28,10 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-
-function getRandomPosition() { // renvoie un tableau de coordonnées aléatoires entre 0 et 800
-	var randomX = Math.floor(Math.random()*(700 - moveSize));
-	var randomY = Math.floor(Math.random()*(700 - moveSize));
+// RANDOM ENNEMI //
+function getRandomPosition() {
+	var randomX = Math.floor(Math.random()*(25));
+	var randomY = Math.floor(Math.random()*(25));
   console.log ([randomX,randomY])
 	return [randomX,randomY];
 }
@@ -39,11 +41,17 @@ window.onload = function() {
   for (i = 0; i < badguys.length; i++){
     randomPos(badguys.item(i));
   }
+  var walls = document.getElementById ("walls");
+  // console.log (wall)
+  for (let i = 0; i < 50; i++){
+  let wall = document.createElement ("div");
+  walls.appendChild(wall)
+  wall.classList.add ("wall")
+  randomPos(wall);
+  }
 }
-
-
 function randomPos(elem) {
   var xy = getRandomPosition();
-  elem.style.top = xy[0] + 'px';
-  elem.style.left = xy[1] + 'px';
+  elem.style.top = xy[0] * 32 + 'px';
+  elem.style.left = xy[1] * 32 + 'px';
 }
