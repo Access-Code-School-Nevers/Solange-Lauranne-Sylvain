@@ -1,0 +1,13 @@
+#board{
+  width:480px;
+  height:480px;
+  background-color:black;
+  position:relative;
+}
+
+#token{
+  width:32px;
+  height:32px;
+  background-color:grey;
+  position:absolute;
+}
