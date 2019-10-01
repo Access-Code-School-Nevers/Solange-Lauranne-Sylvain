@@ -28,8 +28,9 @@ document.addEventListener('keydown', function(event) {
 
 
 function getRandomPosition() { // renvoie un tableau de coordonnées aléatoires entre 0 et 800
-	var randomX = Math.floor(Math.random()*700);
-	var randomY = Math.floor(Math.random()*700);
+	var randomX = Math.floor(Math.random()*(700 - moveSize));
+	var randomY = Math.floor(Math.random()*(700 - moveSize));
+  console.log ([randomX,randomY])
 	return [randomX,randomY];
 }
 window.onload = function() {
@@ -43,6 +44,6 @@ window.onload = function() {
 
 function randomPos(elem) {
   var xy = getRandomPosition();
-  elem.style.top = xy[1] + 'px';
+  elem.style.top = xy[0] + 'px';
   elem.style.left = xy[1] + 'px';
 }
