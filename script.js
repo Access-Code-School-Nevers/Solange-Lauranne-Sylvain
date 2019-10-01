@@ -1,5 +1,5 @@
 var player = document.getElementById('player');
-var moveSize = 50;
+var moveSize = 32;
 var parentRect = document.getElementById('board').getBoundingClientRect();
 var childRect;
 
@@ -28,8 +28,8 @@ document.addEventListener('keydown', function(event) {
 
 
 function getRandomPosition() { // renvoie un tableau de coordonnées aléatoires entre 0 et 800
-	var randomX = Math.floor(Math.random()*800);
-	var randomY = Math.floor(Math.random()*800);
+	var randomX = Math.floor(Math.random()*700);
+	var randomY = Math.floor(Math.random()*700);
 	return [randomX,randomY];
 }
 window.onload = function() {
