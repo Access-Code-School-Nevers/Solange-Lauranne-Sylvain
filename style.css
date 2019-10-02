@@ -1,39 +1,71 @@
 #board{
   width:800px;
   height:800px;
-  background-color:black;
+  background-color:#2a7a5b;
   position:relative;
 }
 
 .badguy{
   width:32px;
   height:32px;
-  background-color:red;
+  background-color:#a33430;
   position:absolute;
 }
 
 .wall {
   width:32px;
   height:32px;
-  background-color:#483829;
+  background-color:#404247;
   position:absolute;
 }
 
 #player{
   width:32px;
   height:32px;
-  background-color:green;
+  background-color:#02a2f1;
   position:absolute;
   z-index: auto;
 }
 
 #bomb{
-  width:32px;
-  height:32px;
+  width:24px;
+  height:24px;
   background-color:yellow;
   position:absolute;
+  margin-left: 4px;
+  margin-top: 4px;
   /* display: none; */
 }
+
+.blast {
+  width:24px;
+  height:24px;
+  background-color:yellow;
+  position:absolute;
+  display: none;
+}
+
+#bottomBlast {
+  top: 32px;
+  left: 0px;
+}
+
+#topBlast {
+  top: -32px;
+  left: 0px;
+}
+
+#leftBlast {
+  top: 0px;
+  left: 32px;
+}
+
+#rightBlast {
+  top: 0px;
+  left: -32px;
+}
+
+
 
 .not-visible {
   display: none;
