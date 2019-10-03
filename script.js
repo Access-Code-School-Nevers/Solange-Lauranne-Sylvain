@@ -138,15 +138,20 @@ setInterval(function() {
 }, 15000);
 
 function addWalls(n) {
-  for (let i = wallMaxId; i < n + wallMaxId; i++){
-    let wall = document.createElement ("div");
-    walls.appendChild(wall);
-    wall.classList.add ("wall");
-    wall.setAttribute('id', 'wall'+i)
-    place(wall, 'wall'+i);
+  if (countEmpty() > 75) {
+    for (let i = wallMaxId; i < n + wallMaxId; i++){
+      let wall = document.createElement ("div");
+      walls.appendChild(wall);
+      wall.classList.add ("wall");
+      wall.setAttribute('id', 'wall'+i)
+      place(wall, 'wall'+i);
+    }
+    level ++
+    wallMaxId += n;
   }
-  level ++
-  wallMaxId += n;
+  else {
+    gameOver();
+  }
 }
 
 function gameOver() {
@@ -155,6 +160,18 @@ function gameOver() {
   if (replay) {
     loadGame();
   }
+}
+
+function countEmpty() {
+  let count = 0;
+  grid.forEach((row) => {
+    row.forEach((square) => {
+      if (!square) {
+        count ++;
+      }
+    })
+  })
+  return count;
 }
 // function checkSides(elem, elemType) {
   // console.log(elem);
