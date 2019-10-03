@@ -27,20 +27,26 @@ function explodeBomb() {
     show(blast.item(i));
   }
   let [x, y] = getSquare(bomb);
-  console.log([x, y]);
   for (let i = x-1; i <= x+1; i++){
     for (let j = y-1; j<= y+1; j++) {
-      console.log([i, j]);
       if (i >= 0 && j >= 0 && i < 25 && j < 25 && !!grid[i][j]) {
         elem = document.getElementById(grid[i][j]);
         if (grid[i][j] == 'player') {
-          let replay = confirm('GAME OVER \n Do you want to play a game ?');
-          if (replay) {
-            location.reload();
+          gameOver();
+        }
+        else if (grid[i][j].indexOf('badguy') >= 0) {
+          score += 10 * level;
+          document.getElementById('score').textContent = score;
+          place (document.getElementById(grid[i][j]), grid[i][j]);
+        }
+        else {
+          if (grid[i][j].indexOf('wall') >= 0) {
+            score += level;
+            document.getElementById('score').textContent = score;
           }
+          hide(elem);
         }
         grid[i][j] = undefined;
-        hide(elem);
       }
     }
   }
@@ -50,7 +56,5 @@ function explodeBomb() {
       hide(blast.item(i));
     }
     bombActivated = false;
-  }, 1000);
-
-  console.log(grid);
+  }, 500);
 }

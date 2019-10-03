@@ -8,8 +8,9 @@
 .badguy{
   width:32px;
   height:32px;
-  background-color:#a33430;
+  background-image: url("img/badguy.png");
   position:absolute;
+  z-index: 4
 }
 
 .wall {
@@ -22,7 +23,7 @@
 #player{
   width:32px;
   height:32px;
-  background-color:#02a2f1;
+  background-image: url("img/rainbowCat.png");
   position:absolute;
   z-index: auto;
 }
@@ -30,10 +31,11 @@
 #bomb{
   width:24px;
   height:24px;
-  background-color:yellow;
+  background-image: url("img/bomb.png");
   position:absolute;
   margin-left: 4px;
   margin-top: 4px;
+  z-index: 5;
   /* display: none; */
 }
 
@@ -65,6 +67,15 @@
   left: -32px;
 }
 
+.score {
+  font-weight: bold;
+  font-size: 2em;
+  color: grey;
+}
+
+th, td {
+  padding-right: 1em;
+}
 
 
 .not-visible {
